@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis UH-1 XI ELIN 2 Ngakak</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #4a90e2;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+        .question-block {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid #4a90e2;
+        }
+        .question-text {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 15px;
+        }
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .option-label {
+            background: #fff;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+        }
+        .option-label:hover {
+            background: #eef5fc;
+            border-color: #4a90e2;
+        }
+        .option-label input {
+            margin-right: 12px;
+        }
+        .btn-submit {
+            display: block;
+            width: 100%;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 1.1em;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 25px;
+            transition: background 0.3s;
+        }
+        .btn-submit:hover {
+            background: #357abd;
+        }
+        .result-box {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            display: none;
+        }
+        .success {
+            background: #e6f4ea;
+            color: #137333;
+            border: 1px solid #dadce0;
+        }
+        .wrong-feedback {
+            color: #c5221f;
+            font-size: 0.9em;
+            margin-top: 8px;
+            font-weight: 500;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Kuis UH-1 XI ELIN 2 Ngakak 🤣</h1>
+    <div class="subtitle">Ujian Terbuka bagi Warga Kelas Penuh Misteri</div>
+
+    <form id="quizForm">
+        <!-- Soal 1 -->
+        <div class="question-block" data-correct="B">
+            <div class="question-text">1. Siapa nama bapa Nizam?</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q1" value="A"> A. Dadan</label>
+                <label class="option-label"><input type="radio" name="q1" value="B"> B. Aladin</label>
+                <label class="option-label"><input type="radio" name="q1" value="C"> C. Tatang</label>
+            </div>
+            <div class="wrong-feedback">Salah! Jawaban yang bener: B. Aladin</div>
+        </div>
+
+        <!-- Soal 2 -->
+        <div class="question-block" data-correct="C">
+            <div class="question-text">2. Siapa nama bapa Rendi?</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q2" value="A"> A. Septian</label>
+                <label class="option-label"><input type="radio" name="q2" value="B"> B. Agus</label>
+                <label class="option-label"><input type="radio" name="q2" value="C"> C. Dadan</label>
+            </div>
+            <div class="wrong-feedback">Salah! Jawaban yang bener: C. Dadan</div>
+        </div>
+
+        <!-- Soal 3 -->
+        <div class="question-block" data-correct="B">
+            <div class="question-text">3. Siapa nama ema Gosan?</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q3" value="A"> A. Soto</label>
+                <label class="option-label"><input type="radio" name="q3" value="B"> B. Siti</label>
+                <label class="option-label"><input type="radio" name="q3" value="C"> C. Air</label>
+            </div>
+            <div class="wrong-feedback">Salah! Jawaban yang bener: B. Siti</div>
+        </div>
+
+        <!-- Soal 4 -->
+        <div class="question-block" data-correct="D">
+            <div class="question-text">4. Siapa nama bapa Yusuf?</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q4" value="A"> A. Atit</label>
+                <label class="option-label"><input type="radio" name="q4" value="B"> B. Malik</label>
+                <label class="option-label"><input type="radio" name="q4" value="C"> C. Ridwan</label>
+                <label class="option-label"><input type="radio" name="q4" value="D"> D. (Jawaban Kunci)</label>
+            </div>
+            <div class="wrong-feedback">Salah! Jawaban yang bener: D</div>
+        </div>
+
+        <!-- Soal 5 -->
+        <div class="question-block" data-correct="B">
+            <div class="question-text">5. Siapa nama bapa Azriel?</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q5" value="A"> A. Galon</label>
+                <label class="option-label"><input type="radio" name="q5" value="B"> B. Air anget</label>
+                <label class="option-label"><input type="radio" name="q5" value="C"> C. -</label>
+            </div>
+            <div class="wrong-feedback">Salah! Jawaban yang bener: B. Air anget</div>
+        </div>
+
+        <!-- Soal 6 -->
+        <div class="question-block" data-correct="L">
+            <div class="question-text">6. Siapa murid yang mirip Kairi di XI ELIN 2?</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q6" value="A"> A. Andra</label>
+                <label class="option-label"><input type="radio" name="q6" value="B"> B. Nizam</label>
+                <label class="option-label"><input type="radio" name="q6" value="C"> C. Anzain</label>
+                <label class="option-label"><input type="radio" name="q6" value="D"> D. Cahyo</label>
+                <label class="option-label"><input type="radio" name="q6" value="E"> E. Rooney</label>
+                <label class="option-label"><input type="radio" name="q6" value="F"> F. Gosan</label>
+                <label class="option-label"><input type="radio" name="q6" value="G"> G. Upang</label>
+                <label class="option-label"><input type="radio" name="q6" value="H"> H. Yoga</label>
+                <label class="option-label"><input type="radio" name="q6" value="I"> I. Rendi</label>
+                <label class="option-label"><input type="radio" name="q6" value="J"> J. Yusuf</label>
+                <label class="option-label"><input type="radio" name="q6" value="K"> K. Azriel</label>
+                <label class="option-label"><input type="radio" name="q6" value="L"> L. Fatih</label>
+            </div>
+            <div class="wrong-feedback">Salah! Jawaban yang bener: L. Fatih</div>
+        </div>
+
+        <!-- Soal 7 -->
+        <div class="question-block" data-correct="A">
+            <div class="question-text">7. Siapa murid ter-pinter IQ 9999+ di kelas XI ELIN 2?</div>
+            <div class="options">
+                <label class="option-label"><input type="radio" name="q7" value="A"> A. Fatih</label>
+                <label class="option-label"><input type="radio" name="q7" value="B"> B. Cicak</label>
+                <label class="option-label"><input type="radio" name="q7" value="C"> C. Dinding</label>
+            </div>
+            <div class="wrong-feedback">Salah! Jawaban yang bener: A. Fatih</div>
+        </div>
+
+        <button type="button" class="btn-submit" onclick="checkAnswers()">Kirim Jawaban & Cek Hasil</button>
+    </form>
+
+    <div id="resultBox" class="result-box success"></div>
+</div>
+
+<script>
+    function checkAnswers() {
+        const questions = document.querySelectorAll('.question-block');
+        let score = 0;
+        let total = questions.length;
+
+        questions.forEach((block, index) => {
+            const correctAnswer = block.getAttribute('data-correct');
+            const qName = 'q' + (index + 1);
+            const selected = block.querySelector(`input[name="${qName}"]:checked`);
+            const feedback = block.querySelector('.wrong-feedback');
+
+            if (selected && selected.value === correctAnswer) {
+                score++;
+                feedback.style.display = 'none';
+                block.style.borderLeft = '5px solid #2db757';
+            } else {
+                feedback.style.display = 'block';
+                block.style.borderLeft = '5px solid #d93025';
+            }
+        });
+
+        const resultBox = document.getElementById('resultBox');
+        resultBox.style.display = 'block';
+        resultBox.innerHTML = `Skor Kamu: ${score} dari ${total} Soal Benar! 🎉<br>` + 
+                              (score === total ? "Gokil! Kamu tahu luar dalam isi kelas XI ELIN 2!" : "Waduh, masih kurang update nih info internalnya!");
+        
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+</script>
+</body>
+</html>
